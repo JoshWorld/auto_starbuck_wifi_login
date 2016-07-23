@@ -1,0 +1,50 @@
+* WHAT 
+
+   - 스타벅스 자동 로그인 스크립트
+   - 스타벅스 무료 와이파이 사용을 위해서 거쳐야하는 과정 자동화
+
+
+* 원리
+
+   - selenium을 이용해서 필요한 과정(click) 과 자료를 입력한다.
+
+* 효과
+
+  - 로그인을 하고 버튼 클릭하고 자료 입력하는 시간 15초
+
+  한달 10 번으로 일년을 계산하면 15 * 10 * 12 = 1800초, 30분을 절약할 수 있다.
+
+* 설치
+
+  좀 귀찮지만 소스를 받아서 조금 수정을 해야 한다. T.T 
+
+  1. 소스 다운 받기
+
+     wget https://github.com/jinniahn/auto_starbuck_wifi_login/archive/master.zip -O auto_starbuck_wifi_login.zip
+
+  2. 의존 라이브러리 설치
+
+     pip3 install -r requirements.txt
+
+  3. 소스 수정
+
+     app.py에 다음 내용 수정
+
+     #+begin_src py options
+     info = {
+         "name": my_data["name"],
+         "email": my_data["email"],
+         "tel": my_data["tel"]
+     }
+     #+end_src
+
+  4. 실행
+
+     - 이 프로그램은 python3로 작성
+
+     python3 app.py
+
+
+
+
+
