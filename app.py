@@ -71,9 +71,9 @@ class StarbuckPage(object):
         # 이게 가장 시간이 많이 걸렸다.
         
         element = self.driver.find_element_by_css_selector("#userNm")
-        element.send_keys(person.name)
+        element.send_keys(person["name"])
         element = self.driver.find_element_by_css_selector("#cust_email_addr")
-        element.send_keys(person.email)
+        element.send_keys(person["email"])
         element = self.driver.find_element_by_css_selector("#kt_btn")
         # 전화번호 종류에 대한 라디오 버튼 클릭
         # 라디오 버튼도 버튼이다.
@@ -81,7 +81,7 @@ class StarbuckPage(object):
         if element:
             element.click()
         element = self.driver.find_element_by_css_selector("input[name=cust_hp_no]")
-        element.send_keys(person.tel)
+        element.send_keys(person["tel"])
 
         # SEND 버튼이 눌리면 호출된는 javascript 코드를 호출했다.
         # 위 처럼 버튼을 찾아서 click해도 된다.
@@ -105,7 +105,8 @@ def auto_login(me):
             # 자료 입력 로직이 영어 페이지에 맞추어져 있다.
             # 영어와 한글페이지에 요구되는 데이터가 다르다.
             page.go_url('http://first.wifi.olleh.com/starbucks/index_en_new.html')
-            sleep(0.5)
+            time.sleep(0.5)
+            break
 
     # 확인 버튼 클릭
     page.clickAccessWifi()
