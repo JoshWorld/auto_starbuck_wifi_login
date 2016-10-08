@@ -90,4 +90,4 @@ ENV/
 
 build/
 dist/
-*.egg/
+*.egg-info/
