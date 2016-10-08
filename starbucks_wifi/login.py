@@ -20,7 +20,9 @@ class StarbuckPage(object):
 
         # Chrome용 웹드라이버다.
         # selenium에서 지원하는 웹브라우저는 모두 사용가능하다.
-        driver = webdriver.Chrome(os.path.join(curdir, 'webdriver', "chromedriver"))
+        driver_path = os.path.join(curdir, 'webdriver', "chromedriver")
+        driver = webdriver.Chrome(driver_path)
+        
         return driver
 
     def current_url(self):
@@ -121,22 +123,4 @@ def auto_login(me):
         if url == 'http://www.istarbucks.co.kr:8000/wireless/wireless.asp':
             return True
         time.sleep(0.5)
-
-if __name__ == '__main__':
-    import os.path
-    import json
-
-    #{{{ 여기서를 자신에게 맞게 수정
-    my_data = json.load(open(os.path.expanduser("~/.me/me.json"), encoding='utf-8'))
-
-    info = {
-        "name": my_data["name"],
-        "email": my_data["email"],
-        "tel": my_data["tel"]
-    }
-    #}}}
-    
-    if auto_login(info):
-        print("[!] Enjoy starbuck life")
-
 
