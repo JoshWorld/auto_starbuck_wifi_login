@@ -3,7 +3,7 @@ from setuptools import setup
 
 setup(
     name = "starbucks-wifi-login-in-kor",
-    version = "1.0",
+    version = "1.1",
     author = "jinsub ahn",
     author_email = "jinniahn@gmail.com",
     description = ("When you go starbucks in korea, you can be asked your information. "
@@ -13,7 +13,7 @@ setup(
     url = "https://github.com/jinniahn/auto_starbuck_wifi_login",
     packages=['starbucks_wifi'],
     package_data={'starbucks_wifi': ['webdriver/*']},
-    scripts=['bin/startbucks_login.py'],
+    scripts=['bin/starbucks_login.py'],
     install_requires=[
         'selenium',
     ],    
